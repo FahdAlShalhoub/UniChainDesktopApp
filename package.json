@@ -1,0 +1,12 @@
+{
+  "name": "unichaindesktopapp",
+  "version": "1.0.0",
+  "description": "KSU Uni Chain Graduate Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "start", 
+    "test": "test"
+  },
+  "author": "WE",
+  "license": "ISC"
+}
