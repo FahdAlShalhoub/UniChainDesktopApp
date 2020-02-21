@@ -4,9 +4,12 @@
   "description": "KSU Uni Chain Graduate Project",
   "main": "app.js",
   "scripts": {
-    "start": "start", 
+    "start": "electron app.js",
     "test": "test"
   },
   "author": "WE",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^8.0.1"
+  }
 }
