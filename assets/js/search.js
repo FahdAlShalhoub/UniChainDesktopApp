@@ -25,37 +25,47 @@ let blockchain = [
 
    function searchbyhash() {
     let value = document.getElementById("searchbyhash").value;
+    let data = "null";
 
    blockchain.forEach(block => {
 
+    if(block.hash === value){
+        data = block;
+    }
+});
+           if(data === "null"){
 
-       if(!(value === block.hash)){
-        alert("there no block with this hash");
-       
-       }else{
-        document.getElementById("hash").innerHTML = block.hash;
-        document.getElementById("nonce").innerHTML = block.nonce;
-        document.getElementById("height").innerHTML = block.height;
-        document.getElementById("timestamp").innerHTML = block.timestamp;
-        document.getElementById("prehash").innerHTML = block.prehash;
-       }
-   });
+            alert("there no block with this hash");
+           
+           }else{
+            document.getElementById("hash").innerHTML = data.hash;
+            document.getElementById("nonce").innerHTML = data.nonce;
+            document.getElementById("height").innerHTML = data.height;
+            document.getElementById("timestamp").innerHTML = data.timestamp;
+            document.getElementById("prehash").innerHTML = data.prehash;
+           }
 }
 
 function searchbyheight() {
-    let value = document.getElementById("searchbyheight").value;
 
-   blockchain.forEach(block => {
+    let value = document.getElementById("searchbyheight").value;
+    let data = "null";
     
-    if(!(value === block.height)){
-        alert("there no block with this height");
-       
-       }else{
-        document.getElementById("hash").innerHTML = block.hash;
-        document.getElementById("nonce").innerHTML = block.nonce;
-        document.getElementById("height").innerHTML = block.height;
-        document.getElementById("timestamp").innerHTML = block.timestamp;
-        document.getElementById("prehash").innerHTML = block.prehash;
-       }
-   });
+   blockchain.forEach(block => {
+
+    if(block.height === value){
+        data = block;
+    }
+
+});
+        if(data === "null"){
+            
+            alert("there no block with this height");
+           }else{
+            document.getElementById("hash").innerHTML = data.hash;
+            document.getElementById("nonce").innerHTML = data.nonce;
+            document.getElementById("height").innerHTML = data.height;
+            document.getElementById("timestamp").innerHTML = data.timestamp;
+            document.getElementById("prehash").innerHTML = data.prehash;
+           }
 }
