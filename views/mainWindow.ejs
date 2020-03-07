@@ -1,0 +1,74 @@
+<%- include('./layouts/header') -%>
+
+<div class="content">
+    <br>
+    
+    <div class="row">
+        
+        <div class="col-sm-6">
+            <br>
+            <br><br><br>
+            <div class="card" id="search-button-hash">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">search by hash</label>
+                            <input type="search" id="searchbyhash" class="form-control" aria-describedby="searchHelp"
+                                placeholder="search by hash">
+                        </div>
+                    </form>
+                    <button type="submit" onclick="searchbyhash()"
+                            class="btn btn-primary">search</button>
+                </div>
+            </div>
+            <p id="or"><strong> OR</strong></p>
+            <br>
+
+            <div class="card" id="search-button-height">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">search by height</label>
+                            <input type="search" id="searchbyheight" class="form-control" aria-describedby="searchHelp"
+                                placeholder="search by height">
+                        </div>
+
+                    </form>
+                    <button type="submit" onclick="searchbyheight()"
+                    class="btn btn-primary">search</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+
+            <div class="card card-nav-tabs">
+                <h4 class="card-header card-header-info">Block info</h4>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <h3> Hash :</h3>
+                        <p id="hash"> </p>
+                        <br>
+                        <h3>Nonce :</h3>
+                        <p id="nonce"> </p>
+                        <br>
+                        <h3>Height :</h3>
+                        <p id="height"> </p>
+                        <br>
+                        <h3>Timestamp :</h3>
+                        <p id="timestamp"> </p>
+                        <br>
+                        <h3>number of certificates :</h3>
+                        <p id="certifcates"></p>
+                        <br>
+                        <h3>Previous block hash :</h3>
+                        <p id="prehash"></p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./layouts/footer') -%>
+
+            

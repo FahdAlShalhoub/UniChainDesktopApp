@@ -10,6 +10,7 @@
   "author": "WE",
   "license": "ISC",
   "dependencies": {
-    "electron": "^8.0.1"
+    "electron": "^8.0.1",
+    "electron-ejs": "^1.2.1"
   }
 }
