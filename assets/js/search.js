@@ -1,18 +1,4 @@
 
-
-// async function GetData(){
-//     response = await fetch("http://localhost:3001/search/307c00731231e55d7ca3d12b4accb466823cbc58c20289b359525f8a69f4c89f",{
-//         method: "POST"
-//     });
-//     data = await response.json();
-
-//     console.log(data);
-    
-// }
-
-// GetData();
-
-
  async function searchbyhash() {
 
     let value = document.getElementById("searchbyhash").value;
