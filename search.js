@@ -27,7 +27,12 @@ let blockchain = [
     let value = document.getElementById("searchbyhash").value;
 
    blockchain.forEach(block => {
-       if(value === block.hash){
+
+
+       if(!(value === block.hash)){
+        alert("there no block with this hash");
+       
+       }else{
         document.getElementById("hash").innerHTML = block.hash;
         document.getElementById("nonce").innerHTML = block.nonce;
         document.getElementById("height").innerHTML = block.height;
@@ -41,7 +46,11 @@ function searchbyheight() {
     let value = document.getElementById("searchbyheight").value;
 
    blockchain.forEach(block => {
-       if(value === block.height){
+    
+    if(!(value === block.height)){
+        alert("there no block with this height");
+       
+       }else{
         document.getElementById("hash").innerHTML = block.hash;
         document.getElementById("nonce").innerHTML = block.nonce;
         document.getElementById("height").innerHTML = block.height;
