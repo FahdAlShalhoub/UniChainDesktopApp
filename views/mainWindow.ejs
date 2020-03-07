@@ -1,10 +1,41 @@
 <%- include('./layouts/header') -%>
 
+<style>
+
+.scrollbar-ripe-malinka::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #F5F5F5;
+border-radius: 10px; }
+
+.scrollbar-ripe-malinka::-webkit-scrollbar {
+width: 12px;
+background-color: #F5F5F5; }
+
+.scrollbar-ripe-malinka::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-image: -webkit-linear-gradient(330deg, #f093fb 0%, #f5576c 100%);
+background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); }
+
+.square::-webkit-scrollbar-track {
+border-radius: 0 !important; }
+
+.square::-webkit-scrollbar-thumb {
+border-radius: 0 !important; }
+
+.thin::-webkit-scrollbar {
+width: 6px; }
+
+.scrolly {
+position: relative;
+overflow-y: scroll;
+height: 600px; }
+</style>
 <div class="content">
     <br>
-    
+
     <div class="row">
-        
+
         <div class="col-sm-6">
             <br>
             <br><br><br>
@@ -17,11 +48,10 @@
                                 placeholder="search by hash">
                         </div>
                     </form>
-                    <button type="submit" onclick="searchbyhash()"
-                            class="btn btn-primary">search</button>
+                    <button type="submit" onclick="searchbyhash()" class="btn btn-primary">search</button>
                 </div>
             </div>
-            <p id="or"><strong> OR</strong></p>
+            <!-- <p id="or"><strong> OR</strong></p>
             <br>
 
             <div class="card" id="search-button-height">
@@ -34,35 +64,50 @@
                         </div>
 
                     </form>
-                    <button type="submit" onclick="searchbyheight()"
-                    class="btn btn-primary">search</button>
+                    <button type="submit" onclick="searchbyheight()" class="btn btn-primary">search</button>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="col-sm-6">
 
             <div class="card card-nav-tabs">
-                <h4 class="card-header card-header-info">Block info</h4>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <h3> Hash :</h3>
-                        <p id="hash"> </p>
-                        <br>
-                        <h3>Nonce :</h3>
-                        <p id="nonce"> </p>
-                        <br>
-                        <h3>Height :</h3>
-                        <p id="height"> </p>
-                        <br>
-                        <h3>Timestamp :</h3>
-                        <p id="timestamp"> </p>
-                        <br>
-                        <h3>number of certificates :</h3>
-                        <p id="certifcates"></p>
-                        <br>
-                        <h3>Previous block hash :</h3>
-                        <p id="prehash"></p>
-                    </blockquote>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="info-tab" data-toggle="tab" href="#info" role="tab"
+                            aria-controls="info" aria-selected="true">Block Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="data-tab" data-toggle="tab" href="#data" role="tab" aria-controls="data"
+                            aria-selected="false">Block data</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+
+                        <div class="card card-nav-tabs">
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <h3> Hash :</h3>
+                                    <p id="hash"> </p>
+                                    <br>
+                                    <h3>Height :</h3>
+                                    <p id="height"> </p>
+                                    <br>
+                                    <h3>Timestamp :</h3>
+                                    <p id="timestamp"> </p>
+                                    <br>
+                                    <h3>Previous block hash :</h3>
+                                    <p id="prehash"></p>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade"  id="data" role="tabpanel" aria-labelledby="data-tab">
+                        <div id="block-data" class="card scrolly scrollbar-ripe-malinka">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,5 +115,3 @@
 </div>
 
 <%- include('./layouts/footer') -%>
-
-            
