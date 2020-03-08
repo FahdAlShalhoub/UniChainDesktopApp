@@ -8,11 +8,8 @@
         method: "POST"
     });
     let block = await response.json();
-    // TODO fix the time (it gives me the current time not the time the block was made :( )
-    let time = block.timestamp;
-    time = Date(time);
-    console.log(time);
-    console.log(time.toString());
+
+ 
     
     
            if(block === "null"){
@@ -22,7 +19,7 @@
            }else{
             document.getElementById("hash").innerHTML = block.hash;
             document.getElementById("height").innerHTML = block.height;
-            document.getElementById("timestamp").innerHTML = time.toString();
+            document.getElementById("timestamp").innerHTML = block.timestamp;
             document.getElementById("prehash").innerHTML = block.previousHash;
             
             block.data.forEach(element => {
