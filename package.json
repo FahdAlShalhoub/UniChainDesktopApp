@@ -5,12 +5,17 @@
   "main": "app.js",
   "scripts": {
     "start": "electron app.js",
-    "test": "test"
+    "test": "jest"
   },
   "author": "WE",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "electron": "^8.0.1",
-    "electron-ejs": "^1.2.1"
+    "electron-ejs": "^1.2.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
   }
 }
