@@ -10,12 +10,12 @@
               <input id="studentName" type="text" class="form-control" placeholder="Enter the Name of the student">
             </div>
             <div class="form-group">
-              <label for="">Nationality</label>
-              <input type="text" class="form-control">
-            </div>
-            <div class="form-group">
               <label for="">Student Id</label>
               <input id="studentId" type="number" class="form-control" maxlength="10">
+            </div>
+            <!-- <div class="form-group">
+              <label for="">Nationality</label>
+              <input type="text" class="form-control">
             </div>
             <div class="form-group">
               <label for="">Date Of Birth</label>
@@ -25,9 +25,10 @@
               <label for="">Place Of Birth</label>
               <input type="text" class="form-control">
             </div>
+            -->
           </div>
           <div class="col-sm-6">
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="">College</label>
               <input type="text" class="form-control">
             </div>
@@ -36,16 +37,17 @@
               <input type="text" class="form-control">
             </div>
             <div class="form-group">
-              <label for="">Graduation Date</label>
-              <input id="graduationDate" type="date" class="form-control">
-            </div>
-            <div class="form-group">
               <label for="">GPA</label>
               <input type="number" class="form-control" max="5">
             </div>
+            -->
+            <div class="form-group">
+              <label for="">Graduation Date</label>
+              <input id="graduationDate" type="date" class="form-control" min="2010-01-01">
+            </div>
           </div>
           <div class="col-sm-12 d-flex justify-content-center">
-            <input type="button" class="btn btn-primary" value="Add To Mempool" onclick="sendAddBlockRequest();">
+            <input type="button" class="btn btn-primary" value="Add Block" onclick="sendAddBlockRequest();">
           </div>
         </div>
       </form>
