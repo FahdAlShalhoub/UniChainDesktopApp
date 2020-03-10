@@ -1,6 +1,7 @@
 const {app,BrowserWindow,ipcMain} = require('electron');
 const electronEjs = require("electron-ejs");
 const ejs = new electronEjs({"key": "my value"}, {});
+const path = require('path');
 
 let mainWindow;
 
