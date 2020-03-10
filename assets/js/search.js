@@ -8,6 +8,12 @@
         method: "POST"
     });
     let block = await response.json();
+    console.log(block.timestamp);
+    let time = new Date(block.timestamp);
+    console.log(time);
+    console.log(time.toString());
+    
+    
 
  
     
