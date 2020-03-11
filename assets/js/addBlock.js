@@ -27,7 +27,7 @@ function sendAddBlockRequest() {
             document.getElementById('studentName').value = "";
             document.getElementById('major').value = "";
             document.getElementById('graduationDate').value = "";
-            alert("Successfuly added new block with hash");
+            alert("Successfuly added new certificate to the mempool");
         }).catch(err => console.log(err));
     }
 }
