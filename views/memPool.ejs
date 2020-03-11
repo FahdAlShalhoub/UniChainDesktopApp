@@ -1,0 +1,42 @@
+<%- include("./layouts/header") -%>
+
+
+
+<div class="content">
+    <br>
+
+
+        <h1 class="text-center border-bottom"> MemPool</h1>
+
+
+    <div class="row">
+        
+        <div class="card">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-center">#</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Student id</th>
+                        <th class="text-center">University</th>
+                        <th class="text-center">Major</th>
+                        <th class="text-center">Year</th>
+                        <th class="text-center">Hash</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button onclick="mineBlock()" type="button" class="btn btn-primary btn-block">Mine</button>
+
+    </div>
+</div>
+
+
+
+<%- include("./layouts/footer") -%>
