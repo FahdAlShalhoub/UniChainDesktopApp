@@ -1,1 +1,1 @@
-Communicator = require("./communicator"); 
+Communicator = require("./Communicator"); 
