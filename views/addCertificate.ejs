@@ -49,11 +49,40 @@
             </div>
           </div>
           <div class="col-sm-12 d-flex justify-content-center">
-            <input type="button" class="btn btn-primary" value="Add Block" onclick="sendAddBlockRequest();">
+            <input type="button" class="btn btn-primary" value="Add Block" onclick="submitCertificate();">
           </div>
         </div>
       </form>
     </div>
   </div>
 </div>
+
+<script>
+  function submitCertificate(){
+    let studentId = document.getElementById('studentId').value;
+    let studentName = document.getElementById('studentName').value;
+    let major = document.getElementById('major').value;
+    let year = document.getElementById('graduationDate').value;
+
+    if(studentName == "" || studentId == "" || year == ""){
+        alert("Please fill the missing parameter(s)");
+    } else {
+        let newCertificate = {
+            "ID": studentId,
+            "major": major,
+            "name": studentName,
+            "university": "King Saud University",
+            "year": parseInt(year.substring(0,4)),
+        };
+
+        try { 
+          Communicator.addCertificate(newCertificate);
+          alert("Certificate Added To The Mempool Successfully");
+        } catch(error) {
+          alert("Failed To Add Certificate To The Mempool");
+        }
+    }    
+  }
+</script>
+
 <%- include("./layouts/footer") -%>

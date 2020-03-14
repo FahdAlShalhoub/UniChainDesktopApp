@@ -1,1 +1,1 @@
-window.ipc = require("electron").ipcRenderer;
+Communicator = require("./communicator"); 

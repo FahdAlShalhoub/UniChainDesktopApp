@@ -12,45 +12,40 @@
 </div>
 
 <script>
-  async  function GetBlockChain(){
+    document.addEventListener("DOMContentLoaded", function(){
+        getBlockchain();
+    });
 
+    function getBlockchain(){
+        let blockchain = Communicator.getBlockchain();
 
-        let response = await fetch('http://localhost:3001/blockchain');
-        let blockchain = await response.json();
-
-        console.log(blockchain);
-        
         for (let i = 1; i <= 5; i++) {
-    
-        let div = document.createElement("div");
-        div.setAttribute("class", "col-sm-6");
+            let div = document.createElement("div");
+            div.setAttribute("class", "col-sm-6");
 
-        div.innerHTML = `<div class="card card-nav-tabs">
-                    <div class="card-body">
-                        <h4 class="text-center">Block ${i} </h4>
-                    <blockquote class="blockquote mb-0">
-                        <h4> Hash :</h4>
-                        <p id="hash"> ${blockchain[i].hash}</p>
-                        <br>
-                        <h4>Height :</h4>
-                        <p id="height">  ${blockchain[i].height}</p>
-                        <br>
-                        <h4>Number of certificate:</h4>
-                        <p id="numofcertificate">  ${blockchain[i].data.length}</p>
-                        <br>
-                        <h4>Previous block hash :</h4>
-                        <p id="prehash"> ${blockchain[i].previousHash}</p>
-                    </blockquote>
-                </div>
-            </div>`;
+            div.innerHTML = `<div class="card card-nav-tabs">
+                        <div class="card-body">
+                            <h4 class="text-center">Block ${i} </h4>
+                        <blockquote class="blockquote mb-0">
+                            <h4> Hash :</h4>
+                            <p id="hash"> ${blockchain[i].hash}</p>
+                            <br>
+                            <h4>Height :</h4>
+                            <p id="height">  ${blockchain[i].height}</p>
+                            <br>
+                            <h4>Number of certificate:</h4>
+                            <p id="numofcertificate">  ${blockchain[i].data.length}</p>
+                            <br>
+                            <h4>Previous block hash :</h4>
+                            <p id="prehash"> ${blockchain[i].previousHash}</p>
+                        </blockquote>
+                    </div>
+                </div>`;
 
             document.getElementById("blocksid").appendChild(div);
         }
-
-
     }
 
-    GetBlockChain();
 </script>
 
 <%- include('./layouts/footer') -%>
