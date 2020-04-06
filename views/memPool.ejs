@@ -37,6 +37,39 @@
     </div>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        refreshMempool();
+    });
 
+    function refreshMempool() {
+        let mempool = Communicator.getMempool();
+        let i = 1;
+
+        mempool.forEach(data => {
+
+            let tr = document.createElement("tr");
+            tr.innerHTML = `<td>${i++}</td>
+            <td class="text-center">${data.name}</td>
+            <td class="text-center">${data.ID}</td>
+            <td class="text-center">${data.university}</td>
+            <td class="text-center">${data.major}</td>
+            <td class="text-center">${data.year}</td>
+            <td class="text-center text-break">${data.hashOfCertificate}</td>`;
+        
+            document.getElementById("tbody").appendChild(tr);     
+        });
+    }
+    
+    function mineBlock() {
+        let message = Communicator.mineBlock();
+        if(message === "ok"){
+            self.location['replace'](location);
+            alert("Block Added To The Blockchain Successfully");
+        } else{
+            alert("certificates must exceed 5 to mine a new block");
+        }
+    }
+</script> 
 
 <%- include("./layouts/footer") -%>
