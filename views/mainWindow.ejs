@@ -19,7 +19,8 @@
     function getBlockchain(){
         let blockchain = Communicator.getBlockchain();
 
-        for (let i = 1; i <= 5; i++) {
+        for (let i = 1; i<blockchain.length ; i++) {
+            console.log(blockchain[i].previ);
             let div = document.createElement("div");
             div.setAttribute("class", "col-sm-6");
 
@@ -37,7 +38,7 @@
                             <p id="numofcertificate">  ${blockchain[i].data.length}</p>
                             <br>
                             <h4>Previous block hash :</h4>
-                            <p id="prehash"> ${blockchain[i].previousHash}</p>
+                            <p id="prehash"> ${blockchain[i].previousBlockHash}</p>
                         </blockquote>
                     </div>
                 </div>`;
