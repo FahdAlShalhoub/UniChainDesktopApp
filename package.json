@@ -13,7 +13,7 @@
     "dotenv": "^8.2.0",
     "electron": "^8.2.0",
     "electron-ejs": "^1.2.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "jest": "^25.2.7"
